@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" id="ArtikelEndoprotheseBasis">
+	<xs:include schemaLocation="../Datentypen/IRD_DatenTypen.xsd"/>
+	<xs:annotation>
+		<xs:documentation>
+			Dieses Schema beschreibt die Elemente eines ArtikelEndoprotheseBasis. 
+			Es handelt sich um Endoprothesen-spezifische Angaben zum jeweiligen Artikel.
+			Elemente:
+			- AEP_HerstellerSchluessel: Hersteller
+			- AEP_HerstellerUnbekannt: Hersteller ist unbekannt
+			- AEP_HerstellerSonstiger: Sonstiger Hersteller (Freitextangabe)
+			- AEP_ArtikelTypSchluessel: Artikeltyp
+		</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="ArtikelEndoprotheseBasis">
+		<xs:sequence>
+		<xs:choice>
+            <xs:element name="AEP_HerstellerSchluessel" type="enum_0230"/>
+            <xs:element name="AEP_HerstellerUnbekannt" type="Unbekannt"/>
+         </xs:choice>
+         <xs:element name="AEP_HerstellerSonstiger" type="Freitext250" minOccurs="0"/>
+         <xs:element name="AEP_ArtikelTypSchluessel" type="enum_0290"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
